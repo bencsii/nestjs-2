@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="color: <%= color %>">
+    <h1><%= title %></h1>
+    <form action="/color-picker" method="post">
+        <label for="color">Valassz egy szint:</label>
+        <input type="color" id="color" name="color" value="<%= color %>">
+        <button type="submit">Beallit</button>
+    </form>
+    <p><a href="/quadratic">Masodfoku egyenlet</a></p>
+</body>
+</html>

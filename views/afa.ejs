@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1><%= title %></h1>
+    <form action="/afa" method="post">
+        <label for="netPrice">Netto ar:</label>
+        <input type="number" id="netPrice" name="netPrice" step="any" value="<%= netPrice %>" required>
+
+        <label for="category">Kategoria:</label>
+        <select id="category" name="category">
+            <option value="food" <%= category === 'food' ? 'selected' : '' %>>Elelmiszer (0%)</option>
+            <option value="book" <%= category === 'book' ? 'selected' : '' %>>Konyv (5%)</option>
+            <option value="electronics" <%= category === 'electronics' ? 'selected' : '' %>>Elektronikai termek (27%)</option>
+        </select>
+
+        <button type="submit">Szamolas</button>
+    </form>
+    <% if (result) { %>
+        <p><strong><%= result %></strong></p>
+    <% } %>
+    <p><a href="/intro">Bemutatkozas</a></p>
+</body>
+</html>
